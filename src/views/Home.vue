@@ -1,5 +1,8 @@
 <template>
-  <Navbar></Navbar>
+  <div>
+    <Navbar></Navbar>
+    <p>aisduasioduasduo</p>
+  </div>
 </template>
 
 <script>
