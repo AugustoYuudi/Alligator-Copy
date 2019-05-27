@@ -1,36 +1,32 @@
 <template>
     <div class="navbar">
-        <ul>
-            <li class="navbar__logo" v-if="$route.name !== 'home'">
-                <a href="#" ></a>
-            </li>
+        <div>
+            <a href="#" class="navbar__logo" v-if="$route.name !== 'home'"></a>
 
-            <li class="navbar__explore" v-if="$route.name === 'home'">
-                <a href="#">⚡ Explore</a>
-            </li>
+            <a href="#" class="navbar__explore" v-if="$route.name === 'home'">⚡ Explore</a>
 
-            <li class="navbar__pages" v-if="this.pagesListIsActive">
-                <ul>
-                    <li v-for="(pagina, index) in paginas" :key=index class="pages__page">
-                        {{pagina}}
-                    </li>
-                </ul>
-            </li>
+            <div class="navbar__search__container">
+                <input type="search" class="navbar__search__input" placeholder="しらいし">
 
-            <li class="navbar__search__container">
-                <input type="search" class="navbar__search" placeholder="しらいし">
-            </li>
+                <div class="expander__dot__container" v-on:click="showPages">
+                    <span class="expander__dot"></span>
+                    <span class="expander__dot"></span>
+                    <span class="expander__dot"></span>
+                </div>
+            </div>
 
-            <li class="navbar__menu__expander" v-on:click="showPages">
-                <span class="expander__dot"></span>
-                <span class="expander__dot"></span>
-                <span class="expander__dot"></span>
-            </li>
-
-            <li class="navbar__twitter">
+            <div class="navbar__twitter">
                 <img src="../assets/img/twitter.png" alt="">
-            </li>
-        </ul>
+            </div>
+        </div>
+
+        <div class="navbar__pages" v-if="this.pagesListIsActive">
+            <ul>
+                <li v-for="(pagina, index) in paginas" :key=index class="pages__page">
+                    {{pagina}}
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -42,70 +38,67 @@
         text-decoration none
 
     .navbar
+        display flex
+        flex-flow column
+        justify-content center
+        min-height 3.75rem
+        background-color #002b36
 
-        ul
-            display flex
-            flex-wrap wrap
-            padding-top 1.3rem
-            padding-bottom 0.9rem
-            background-color #002b36
+        &:nth-child(1)
+            flex 1
+            white-space nowrap
+            min-height 3.75rem
 
             .navbar__explore
-                flex 1 0
-                margin-left 1rem
-                white-space nowrap
-                a
-                    color white
-        
+                display inline-block
+                margin-left 1.2rem
+                color white
+
             .navbar__search__container
-                flex 3 0
+                display inline-block
+                float right
+                margin-right 3rem
                 background url(../assets/img/search.png)
                 background-size 1.7rem
                 background-repeat no-repeat
                 background-position -1% 7%
                 border 1px black solid
                 border-radius 8px
-                margin-left 4rem
-                
-                .navbar__search
-                    height 2rem
-                    margin-left 25%
-                    border none
+                width 90px
+
+                .navbar__search__input
                     background transparent
+                    border none
+                    margin-left 25%
                     width 75%
+                    height 28px
 
-                    &::placeholder
-                        color white
-
-            .navbar__pages
-                order 2
-                flex-basis 100%
-                ul
-                    display flex
-                    flex-flow column nowrap
-                    align-items stretch
-                    text-align center
-
-                    .pages__page
-                        font-size 1.5rem
-                        padding-top 1.3rem
-                        padding-bottom 1.3rem
-
-            .navbar__menu__expander
-                flex 1 0
-                padding-top 0.3rem
+            .expander__dot__container
+                display inline-block
                 margin-left 1rem
-                margin-right 1rem
                 .expander__dot
                     background-color white
                     display inline-block
-                    height 6px
-                    width 6px
+                    height 5px
+                    width 5px
                     border-radius 50%
-                    margin-left 0.2rem
+                    margin-right 0.1rem
 
             .navbar__twitter
                 display none
+
+        .navbar__pages
+            flex 1
+            background-color tomato
+            ul
+                display flex
+                flex-flow column nowrap
+                align-items stretch
+                text-align center
+
+                .pages__page
+                    margin-top 1em
+                    height 3em
 
 // @media screen and (min-width: 375px)
 
