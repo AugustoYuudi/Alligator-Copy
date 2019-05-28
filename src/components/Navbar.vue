@@ -1,8 +1,10 @@
 <template>
     <div class="navbar">
-        <div>
+        <div class="upper">
             <a href="#" class="navbar__logo" v-if="$route.name !== 'home'"></a>
-
+            <!-- <ul >
+                <li v-for="(pagina, index) in paginas" :key=index class="pages__page"></li>
+            </ul> -->
             <a href="#" class="navbar__explore" v-if="$route.name === 'home'">⚡ Explore</a>
 
             <div class="navbar__search__container">
@@ -13,10 +15,8 @@
                     <span class="expander__dot"></span>
                     <span class="expander__dot"></span>
                 </div>
-            </div>
 
-            <div class="navbar__twitter">
-                <img src="../assets/img/twitter.png" alt="">
+                <a href="#" class="navbar__twitter"></a>
             </div>
         </div>
 
@@ -31,6 +31,7 @@
 </template>
 
 <style lang="stylus">
+
     *
         margin 0
         padding 0
@@ -38,26 +39,23 @@
         text-decoration none
 
     .navbar
-        display flex
-        flex-flow column
-        justify-content center
-        min-height 3.75rem
         background-color #002b36
 
-        &:nth-child(1)
-            flex 1
-            white-space nowrap
+        .upper
             min-height 3.75rem
+            white-space nowrap
 
             .navbar__explore
                 display inline-block
                 margin-left 1.2rem
+                margin-top 1.2rem
                 color white
 
             .navbar__search__container
                 display inline-block
                 float right
                 margin-right 3rem
+                margin-top 0.9rem
                 background url(../assets/img/search.png)
                 background-size 1.7rem
                 background-repeat no-repeat
@@ -73,43 +71,71 @@
                     width 75%
                     height 28px
 
-            .expander__dot__container
-                display inline-block
-                margin-left 1rem
-                .expander__dot
-                    background-color white
+                .expander__dot__container
                     display inline-block
-                    height 5px
-                    width 5px
-                    border-radius 50%
-                    margin-right 0.1rem
+                    margin-left 1rem
+                    .expander__dot
+                        background-color white
+                        display inline-block
+                        height 5px
+                        width 5px
+                        border-radius 50%
+                        margin-right 0.1rem
 
-            .navbar__twitter
-                display none
+                .navbar__twitter
+                    display none
 
         .navbar__pages
-            flex 1
-            background-color tomato
             ul
-                display flex
-                flex-flow column nowrap
-                align-items stretch
                 text-align center
 
                 .pages__page
                     margin-top 1em
                     height 3em
 
-// @media screen and (min-width: 375px)
+                    &:nth-child(1)
+                        display none
 
-// @media screen and (min-width: 425px)
 
-// @media screen and (min-width: 768px)
 
-// @media screen and (min-width: 1024px)
+    @media screen and (min-width: 1121px)
+        .navbar
+            background-color tomato
 
-// @media screen and (min-width: 1120px)
-    
+            .upper
+                .navbar__search__container
+                    margin-right 4rem
+                    width 140px
+                    height 32px
+                    vertical-align top
+                    background-position -1% 80%
+
+
+                    .navbar__search__input
+                        vertical-align top
+                        height 32px
+
+                    .expander__dot__container
+                        display none
+                
+                    .navbar__twitter
+                        display inline-block
+                        vertical-align top
+                        width 35px
+                        height 35px
+                        margin-left 1.2rem
+                        background url(../assets/img/twitter.png)
+                        background-repeat no-repeat
+                        background-size 30px 30px
+                        background-position 0 30%
+            
+            .navbar__pages
+            ul
+                text-align center
+                .pages__page
+                    margin-top 1em
+                    height 3em
+
 </style>
 
 <script>
@@ -117,6 +143,7 @@ export default {
     data() {
         return {
             paginas: [
+                '⚡ Explore',
                 'Angular', 
                 'Vue.js', 
                 'React', 
