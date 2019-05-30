@@ -1,13 +1,25 @@
 <template>
     <div class="navbar">
         <div class="main">
-            <a href="#" class="navbar__logo" v-if="$route.name !== 'home'"></a>
-            <a href="#" class="navbar__explore" v-if="$route.name === 'home'">⚡ Explore</a>
+
+            <router-link to="#" class="navbar__logo" v-if="$route.name !== 'home'"></router-link>
+
+            <router-link to="#" class="navbar__explore" v-if="$route.name === 'home'">⚡ Explore</router-link>
+
             <ul class="navbar__pages__desktop">
-                <li v-for="(pagina, index) in paginas.slice(0, 6)" :key=index class="pages__desktop" v-bind:class="{angular: index==0, vuejs: index==1, react: index==2, javascript: index==3, css: index==4, svelte: index==5, }">
-                    <a href="#">{{pagina}}</a>
+                <li v-for="(pagina, index) in paginas.slice(0, 6)" :key=index class="pages__desktop">
+                    <router-link to="#" class="page__link" v-bind:class="{angular : index == 0 && $route.name !== 'home', vuejs : index == 1 && $route.name !== 'home', react : index == 2 && $route.name !== 'home', javascript : index == 3 && $route.name !== 'home', css : index == 4 && $route.name !== 'home', svelte : index == 5 && $route.name !== 'home', }">{{pagina}}</router-link>
+                </li>
+                <li class="pages__desktop pages__dropdown">
+                    <a href="#">↓</a>
+                    <ul>
+                        <li v-for="(pagina, index) in paginas.slice(6)" :key=index>
+                            <router-link to="#">{{pagina}}</router-link>
+                        </li>
+                    </ul>
                 </li>
             </ul>
+
 
             <div class="navbar__search__container">
                 <input type="search" class="navbar__search__input" placeholder="しらいし">
@@ -18,15 +30,18 @@
                     <span class="expander__dot"></span>
                 </div>
 
-                <a href="#" class="navbar__twitter"></a>
+                <router-link to="#" class="navbar__twitter"></router-link>
             </div>
         </div>
 
         <div class="navbar__pages__mobile" v-if="this.pagesListIsActive">
             <ul>
-                <li class="pages__mobile" v-if="$route.name !== 'home'"><a href="#">⚡ Explore</a></li>
+                <li class="pages__mobile" v-if="$route.name !== 'home'">
+                    <router-link to="#">⚡ Explore</router-link>
+                </li>
+
                 <li v-for="(pagina, index) in paginas" :key=index class="pages__mobile">
-                    <a href="#">{{pagina}}</a>
+                    <router-link to="#" class="">{{pagina}}</router-link>
                 </li>
             </ul>
         </div>
@@ -46,6 +61,9 @@
         .main
             min-height 3.75rem
             white-space nowrap
+
+            .navbar__pages__desktop
+                display none
 
             .navbar__explore
                 display inline-block
@@ -103,6 +121,9 @@
     @media screen and (min-width: 1121px)
         .navbar
             .main
+                .navbar__pages__desktop
+                    display inline-block
+
                 .navbar__explore
                     padding-left 1rem
                     padding-right 1rem
@@ -137,31 +158,7 @@
                 li
                     display inline-block
 
-                    .angular
-                        a
-                            border-bottom 3px solid #DD0031
-                    
-                    .vuejs
-                        a
-                            border-bottom 3px solid #41B883
-                    
-                    .react
-                        a
-                            border-bottom 3px solid #61dafb
-                    
-                    .javascript
-                        a
-                            border-bottom 3px solid #F7DF1E
-                    
-                    .css
-                        a
-                            border-bottom 3px solid #3399FE
-                    
-                    .svelte
-                        a
-                            border-bottom 3px solid #FF3E00
-
-                    a
+                    .page__link
                         padding-left 1.501rem
                         padding-right 1.501rem
                         padding-top 22px
@@ -174,7 +171,64 @@
                                 rgba(0,0,0,0.25)
                             )
 
-                        
+                    .angular
+                        border-bottom 3px solid #DD0031
+
+                    .vuejs                        
+                        border-bottom 3px solid #41B883
+                    
+                    .react
+                        border-bottom 3px solid #61dafb
+
+                    .javascript 
+                        border-bottom 3px solid #F7DF1E
+
+                    .css
+                        border-bottom 3px solid #3399FE
+
+                    .svelte
+                        border-bottom 3px solid #FF3E00
+
+                .pages__dropdown
+                    padding-left 1.501rem
+                    padding-right 1.501rem
+                    padding-top 22px
+                    padding-bottom 21px
+                    a
+                        color white
+
+                    ul
+                        opacity 0
+                        li
+                            display none
+
+                    &:hover
+                        ul
+                            opacity 1
+                            position absolute
+                            width 510px
+                            height 250px
+                            background-color #008f68
+                            transition opacity .15s ease-out
+                            border-top 3px #FAE042 solid
+                            top 7.5%
+                            transform translateX(-40%)
+                            border-bottom-right-radius: 8px;
+                            border-bottom-left-radius: 8px
+                            // display flex
+                            // flex-direction row
+                            // flex-wrap wrap
+                            // justify-content space-between
+                            overflow hidden
+
+                            li
+                                display inline-block
+                                float left
+                                padding-left 1.501rem
+                                padding-right 1.501rem
+                                padding-top 22px
+                                padding-bottom 21px
+                    
 </style>
 
 <script>
@@ -188,12 +242,20 @@ export default {
                 'Javascript',
                 'CSS',
                 'Svelte',
-                'Angular', 
-                'Vue.js', 
-                'React', 
-                'Javascript',
-                'CSS',
-                'Svelte', 
+                'TypeScript', 
+                'Node.js', 
+                'RxJS', 
+                'Ionic',
+                'Stencil',
+                'Flow', 
+                'Redux', 
+                'Testing', 
+                'Jekyll', 
+                'SASS', 
+                'HTML', 
+                'Web Components', 
+                'Polymer', 
+                'Workflow' 
             ],
 
             pagesListIsActive: false
