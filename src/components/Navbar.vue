@@ -22,7 +22,7 @@
 
 
             <div class="navbar__search__container">
-                <input type="search" class="navbar__search__input" placeholder="しらいし">
+                <input type="search" class="navbar__search__input">
 
                 <div class="expander__dot__container" v-on:click="showPages">
                     <span class="expander__dot"></span>
@@ -77,24 +77,31 @@
                 margin-right 3rem
                 margin-top 0.9rem
                 background url(../assets/img/search.png)
-                background-size 1.7rem
+                background-size 1.3rem
                 background-repeat no-repeat
-                background-position -1% 0
-                border 1px black solid
+                background-position 3% 75%
+                background-color rgba(0,0,0,0.1)
                 border-radius 8px
-                width 90px
+                box-shadow 0 0 1px 1px rgba(0,0,0,0.2)
+                padding-left 10px
 
                 .navbar__search__input
                     background transparent
                     border none
                     outline none
-                    margin-left 25%
-                    width 75%
+                    width 68px
                     height 28px
+                    position relative
+                    left 1.2rem
+                    transition width .20s ease
+
+                    &:focus
+                        width 90px
 
                 .expander__dot__container
                     display inline-block
-                    margin-left 1rem
+                    position relative
+                    left 2rem
                     .expander__dot
                         background-color white
                         display inline-block
@@ -130,20 +137,29 @@
                     margin-left 0.2rem
                 .navbar__search__container
                     margin-right 4rem
-                    width 140px
                     height 32px
                     vertical-align top
-                    background-position -1% 80%
+                    background-position 5% 60%
+                    padding 0
 
                     .navbar__search__input
+                        background-color tomato
                         vertical-align top
                         height 32px
+                        width 60px
+                        position relative
+                        left 3.3rem
+
+                        &:focus
+                            width 140px
 
                     .expander__dot__container
                         display none
                 
                     .navbar__twitter
                         display inline-block
+                        position relative
+                        left 3.4rem
                         vertical-align top
                         width 35px
                         height 35px
@@ -207,7 +223,6 @@
                             opacity 1
                             position absolute
                             width 510px
-                            height 250px
                             background-color #008f68
                             transition opacity .15s ease-out
                             border-top 3px #FAE042 solid
@@ -215,10 +230,6 @@
                             transform translateX(-40%)
                             border-bottom-right-radius: 8px;
                             border-bottom-left-radius: 8px
-                            // display flex
-                            // flex-direction row
-                            // flex-wrap wrap
-                            // justify-content space-between
                             overflow hidden
 
                             li
@@ -265,7 +276,7 @@ export default {
     methods: {
         showPages: function() {
             this.pagesListIsActive = !this.pagesListIsActive
-        }
+        },
     }
 }
 </script>
