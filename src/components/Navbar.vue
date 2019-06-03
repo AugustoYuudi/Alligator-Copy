@@ -74,7 +74,7 @@
             .navbar__search__container
                 display inline-block
                 float right
-                margin-right 3rem
+                margin-right 3.7rem
                 margin-top 0.9rem
                 background url(../assets/img/search.png)
                 background-size 1.3rem
@@ -91,17 +91,17 @@
                     outline none
                     width 68px
                     height 28px
-                    position relative
-                    left 1.2rem
                     transition width .20s ease
+                    margin-left 1.2rem
 
                     &:focus
                         width 90px
 
                 .expander__dot__container
                     display inline-block
-                    position relative
-                    left 2rem
+                    position absolute
+                    right 1rem
+                    top 1.2rem
                     .expander__dot
                         background-color white
                         display inline-block
@@ -135,20 +135,15 @@
                     padding-left 1rem
                     padding-right 1rem
                     margin-left 0.2rem
+
                 .navbar__search__container
                     margin-right 4rem
-                    height 32px
-                    vertical-align top
                     background-position 5% 60%
-                    padding 0
 
                     .navbar__search__input
-                        background-color tomato
-                        vertical-align top
                         height 32px
-                        width 60px
-                        position relative
-                        left 3.3rem
+                        width 110px
+                        left 0
 
                         &:focus
                             width 140px
@@ -158,12 +153,10 @@
                 
                     .navbar__twitter
                         display inline-block
-                        position relative
-                        left 3.4rem
-                        vertical-align top
+                        position absolute
+                        right 0.8rem
                         width 35px
                         height 35px
-                        margin-left 1.2rem
                         background url(../assets/img/twitter.png)
                         background-repeat no-repeat
                         background-size 30px 30px
