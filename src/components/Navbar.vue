@@ -41,7 +41,7 @@
                 </li>
 
                 <li v-for="(pagina, index) in paginas" :key=index class="pages__mobile">
-                    <router-link to="#" class="">{{pagina}}</router-link>
+                    <router-link to="#">{{pagina}}</router-link>
                 </li>
             </ul>
         </div>

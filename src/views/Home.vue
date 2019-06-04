@@ -4,9 +4,9 @@
     <section class="home__main">
       <img src="../assets/img/logo-fancy.svg" alt="Main Logo" class="main__logo">
       <h1>Front-End Web Development,<br>Chewed Up</h1>
-      <p>Angular 2+, Vue.js, React, Svelte,<br>JavaScript, CSS...</p>
+      <p>Angular 2+, Vue.js, React, Svelte<br>JavaScript, CSS...</p>
     </section>
-    <section>aaaa</section>
+    <TopPosts></TopPosts>
   </div>
 </template>
 
@@ -22,7 +22,7 @@
     margin 0 auto
     width 0
     height 0
-    border-top 6rem transparent solid
+    border-top 5rem transparent solid
     border-left 50vw white solid
     border-right 50vw white solid 
     background-image linear-gradient(to right, rgba(107,183,86,0.95), #008f68)
@@ -48,9 +48,11 @@
 
 <script>
   import Navbar from '@/components/Navbar'
+  import TopPosts from '@/components/TopPosts'
   export default {
     components: {
-      Navbar
+      Navbar,
+      TopPosts
     }
 
   }
