@@ -50,189 +50,183 @@
 
 <style lang="stylus">
 
-    *
-        margin 0
-        padding 0
-        list-style none
-        text-decoration none
+.navbar
+    background-image linear-gradient(to right, rgba(107,183,86,0.95), #008f68)
+    .main
+        min-height 3.75rem
+        white-space nowrap
 
-    .navbar
-        background-image linear-gradient(to right, rgba(107,183,86,0.95), #008f68)
-        .main
-            min-height 3.75rem
-            white-space nowrap
+        .navbar__pages__desktop
+            display none
 
-            .navbar__pages__desktop
+        .navbar__explore
+            display inline-block
+            margin-left 1.2rem
+            margin-top 1.2rem
+            color white
+
+        .navbar__search__container
+            display inline-block
+            float right
+            margin-right 3.7rem
+            margin-top 0.9rem
+            background url(../assets/img/search.png)
+            background-size 1.3rem
+            background-repeat no-repeat
+            background-position 3% 75%
+            background-color rgba(0,0,0,0.1)
+            border-radius 8px
+            box-shadow 0 0 1px 1px rgba(0,0,0,0.2)
+            padding-left 10px
+
+            .navbar__search__input
+                background transparent
+                border none
+                outline none
+                width 68px
+                height 28px
+                transition width .20s ease
+                margin-left 1.2rem
+
+                &:focus
+                    width 90px
+
+            .expander__dot__container
+                display inline-block
+                position absolute
+                right 1rem
+                top .9rem
+                .expander__dot
+                    background-color white
+                    display inline-block
+                    height 5px
+                    width 5px
+                    border-radius 50%
+                    margin-right 0.1rem
+
+            .navbar__twitter
                 display none
 
-            .navbar__explore
-                display inline-block
-                margin-left 1.2rem
-                margin-top 1.2rem
-                color white
+    .navbar__pages__mobile
+        ul
+            text-align center
 
-            .navbar__search__container
-                display inline-block
-                float right
-                margin-right 3.7rem
-                margin-top 0.9rem
-                background url(../assets/img/search.png)
-                background-size 1.3rem
-                background-repeat no-repeat
-                background-position 3% 75%
-                background-color rgba(0,0,0,0.1)
-                border-radius 8px
-                box-shadow 0 0 1px 1px rgba(0,0,0,0.2)
-                padding-left 10px
+            .pages__mobile
+                margin-top 1em
+                height 3em
 
-                .navbar__search__input
-                    background transparent
-                    border none
-                    outline none
-                    width 68px
-                    height 28px
-                    transition width .20s ease
-                    margin-left 1.2rem
-
-                    &:focus
-                        width 90px
-
-                .expander__dot__container
-                    display inline-block
-                    position absolute
-                    right 1rem
-                    top 1.2rem
-                    .expander__dot
-                        background-color white
-                        display inline-block
-                        height 5px
-                        width 5px
-                        border-radius 50%
-                        margin-right 0.1rem
-
-                .navbar__twitter
-                    display none
-
-        .navbar__pages__mobile
-            ul
-                text-align center
-
-                .pages__mobile
-                    margin-top 1em
-                    height 3em
-
-                    a
-                        color white
+                a
+                    color white
 
 
-    @media screen and (min-width: 1121px)
-        .navbar
-            .main
-                .navbar__pages__desktop
-                    display inline-block
-
-                .navbar__explore
-                    padding-left 1rem
-                    padding-right 1rem
-                    margin-left 0.2rem
-
-                .navbar__search__container
-                    margin-right 4rem
-                    background-position 5% 60%
-
-                    .navbar__search__input
-                        height 32px
-                        width 110px
-                        left 0
-
-                        &:focus
-                            width 140px
-
-                    .expander__dot__container
-                        display none
-                
-                    .navbar__twitter
-                        display inline-block
-                        position absolute
-                        right 0.8rem
-                        width 35px
-                        height 35px
-                        background url(../assets/img/twitter.png)
-                        background-repeat no-repeat
-                        background-size 30px 30px
-                        background-position 0 30%
-            
+@media screen and (min-width: 1121px)
+    .navbar
+        .main
             .navbar__pages__desktop
                 display inline-block
-                li
+
+            .navbar__explore
+                padding-left 1rem
+                padding-right 1rem
+                margin-left 0.2rem
+
+            .navbar__search__container
+                margin-right 4rem
+                background-position 5% 60%
+
+                .navbar__search__input
+                    height 32px
+                    width 110px
+                    left 0
+
+                    &:focus
+                        width 140px
+
+                .expander__dot__container
+                    display none
+            
+                .navbar__twitter
                     display inline-block
+                    position absolute
+                    right 0.8rem
+                    width 35px
+                    height 35px
+                    background url(../assets/img/twitter.png)
+                    background-repeat no-repeat
+                    background-size 30px 30px
+                    background-position 0 30%
+        
+        .navbar__pages__desktop
+            display inline-block
+            li
+                display inline-block
 
-                    .page__link
-                        padding-left 1.501rem
-                        padding-right 1.501rem
-                        padding-top 22px
-                        padding-bottom 21px
-                        color white
-
-                        .active
-                            background linear-gradient(
-                                rgba(0,0,0,0.25),
-                                rgba(0,0,0,0.25)
-                            )
-
-                    .angular
-                        border-bottom 3px solid #DD0031
-
-                    .vuejs                        
-                        border-bottom 3px solid #41B883
-                    
-                    .react
-                        border-bottom 3px solid #61dafb
-
-                    .javascript 
-                        border-bottom 3px solid #F7DF1E
-
-                    .css
-                        border-bottom 3px solid #3399FE
-
-                    .svelte
-                        border-bottom 3px solid #FF3E00
-
-                .pages__dropdown
+                .page__link
                     padding-left 1.501rem
                     padding-right 1.501rem
                     padding-top 22px
                     padding-bottom 21px
-                    a
-                        color white
+                    color white
 
+                    .active
+                        background linear-gradient(
+                            rgba(0,0,0,0.25),
+                            rgba(0,0,0,0.25)
+                        )
+
+                .angular
+                    border-bottom 3px solid #DD0031
+
+                .vuejs                        
+                    border-bottom 3px solid #41B883
+                
+                .react
+                    border-bottom 3px solid #61dafb
+
+                .javascript 
+                    border-bottom 3px solid #F7DF1E
+
+                .css
+                    border-bottom 3px solid #3399FE
+
+                .svelte
+                    border-bottom 3px solid #FF3E00
+
+            .pages__dropdown
+                padding-left 1.501rem
+                padding-right 1.501rem
+                padding-top 22px
+                padding-bottom 21px
+                a
+                    color white
+
+                ul
+                    opacity 0
+                    li
+                        display none
+
+                &:hover
                     ul
-                        opacity 0
+                        opacity 1
+                        position absolute
+                        width 510px
+                        background-color #008f68
+                        transition opacity .15s ease-out
+                        border-top 3px #FAE042 solid
+                        top 7.5%
+                        transform translateX(-40%)
+                        border-bottom-right-radius: 8px;
+                        border-bottom-left-radius: 8px
+                        overflow hidden
+
                         li
-                            display none
-
-                    &:hover
-                        ul
-                            opacity 1
-                            position absolute
-                            width 510px
-                            background-color #008f68
-                            transition opacity .15s ease-out
-                            border-top 3px #FAE042 solid
-                            top 7.5%
-                            transform translateX(-40%)
-                            border-bottom-right-radius: 8px;
-                            border-bottom-left-radius: 8px
-                            overflow hidden
-
-                            li
-                                display inline-block
-                                float left
-                                padding-left 1.501rem
-                                padding-right 1.501rem
-                                padding-top 22px
-                                padding-bottom 21px
-                    
+                            display inline-block
+                            float left
+                            padding-left 1.501rem
+                            padding-right 1.501rem
+                            padding-top 22px
+                            padding-bottom 21px
+                
 </style>
 
 <script>
