@@ -14,7 +14,7 @@
 .subscribe
     display block
     text-align center
-    margin 3.5rem 0 3.5rem 0
+    margin 3.5rem 0 2rem 0
     padding 1.3rem 0 1.5rem 0
     background linear-gradient(to bottom, transparent, rgba(236, 198, 48, .1))
     transform skewY(6deg)
@@ -54,7 +54,7 @@
             padding 10px 20px
             color #4aae9b
             background linear-gradient(to bottom, rgb(255, 255, 255), rgb(248, 248, 248))
-            box-shadow 0 0 10px rgba(0, 0, 0, .1)
+            box-shadow 0 0 10px rgba(0, 0, 0, .25)
             border none
             transform skewY(-6deg)
 
