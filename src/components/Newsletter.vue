@@ -1,17 +1,17 @@
 <template>
-    <div class="subscribe">
-        <h3 class="subscribe__title">
-            🤹 Subscribe & stay in the loop:
+    <div class="newsletter" :class="{'newsletter--footer' : settings.type == 'footer'}">
+        <h3 class="newsletter__title">
+            {{settings.title}}
         </h3>
         <form action="#" @submit="submitForm">
-            <input type="email" class="form__email" placeholder="your email">
+            <input type="email" class="form__email" :placeholder=settings.placeholder>
             <input type="submit" value="Subscribe" class="form__send">
         </form>
     </div>
 </template>
 
 <style lang="stylus">
-.subscribe
+.newsletter
     display block
     text-align center
     margin 3.5rem 0 2rem 0
@@ -19,26 +19,25 @@
     background linear-gradient(to bottom, transparent, rgba(236, 198, 48, .1))
     transform skewY(6deg)
 
-    .subscribe__title
+    .newsletter__title
         font-size 1.17em
         color #008f68
         margin-bottom 1rem
         transform skewY(-6deg)
 
     form
+        transform skewY(-6deg)
         .form__email
             display block
-            margin 0 auto
+            margin 0 auto .8em auto
             max-width 250px
             width 100%
             height 2.5em
             font-size 17px
             text-align center
-            margin-bottom .8em
             border 2px #6db65b solid
             border-radius 8px
             transition box-shadow .45s, border-color .45s ease-in-out
-            transform skewY(-6deg)
 
             &:focus
                 box-shadow 0 0 5px rgba(0, 0, 0, .1)
@@ -56,11 +55,44 @@
             background linear-gradient(to bottom, rgb(255, 255, 255), rgb(248, 248, 248))
             box-shadow 0 0 10px rgba(0, 0, 0, .25)
             border none
-            transform skewY(-6deg)
+            // transform skewY(-6deg)
 
             &:hover
                 transform skewY(3deg)
 
+.newsletter--footer
+    background none
+    margin 0 auto
+    max-width 750px
+
+    .newsletter__title
+        font-size 2rem
+        line-height 1
+        text-align center
+        padding-bottom 1.7rem
+        letter-spacing .2rem
+    
+    form
+        .form__email
+            max-width 100%
+
+        .form__send
+            font-size 1.3rem
+
+    @media screen and (min-width: 601px)
+        width 100vw
+
+        .newsletter__title
+            font-size 2.5rem
+        
+        form
+            .form__email
+                display inline-block
+                max-width 375px
+                font-size 1.6rem
+            .form__send
+                display inline-block
+                margin-left .3rem
 
 </style>
 
@@ -70,6 +102,16 @@ export default {
         submitForm: function() {
             console.log('form submitted')
         }
+    },
+
+    data() {
+        return {
+            type: 'other'
+        }
+    },
+
+    props: {
+        settings: Object,
     }
     
 }

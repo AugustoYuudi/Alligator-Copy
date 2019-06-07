@@ -7,11 +7,11 @@
       <p>Angular 2+, Vue.js, React, Svelte<br>JavaScript, CSS...</p>
     </section>
     <Posts :postsList="mainPosts"></Posts>
-    <Subscribe></Subscribe>
+    <Newsletter :settings=newsletterSettings></Newsletter>
     <Posts :postsList="reactMainPosts"></Posts>
     <hr>
     <Posts :postsList="jsMainPosts"></Posts>
-    <Advertisement :adList=ads></Advertisement>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -84,15 +84,14 @@ br
 <script>
   import Navbar from '@/components/Navbar'
   import Posts from '@/components/Posts'
-  import Subscribe from '@/components/Subscribe'
-  import Advertisement from '@/components/Advertisement'
-
+  import Newsletter from '@/components/Newsletter'
+  import Footer from '@/components/Footer'
   export default {
     components: {
       Navbar,
       Posts,
-      Subscribe,
-      Advertisement
+      Newsletter,
+      Footer
     },
 
     data() {
@@ -184,22 +183,10 @@ br
             }
           }
         },
-        ads: {
-          ad1: {
-            title: 'Hotjar',
-            icon: 'https://cdn4.buysellads.net/uu/1/42500/1546351188-1538062800-80x80-hotjar-icon.png',
-            content: 'See how your visitors are really using your website.'
-          },
-          ad2: {
-            title: 'Slack',
-            icon: 'https://cdn4.buysellads.net/uu/1/46074/1559076859-20190116_slack_icon_80x80_transparent.png',
-            content: 'Bring your team together with Slack, the collaboration hub for work.'
-          },
-          ad3: {
-            title: 'VSCode Power User',
-            icon: 'https://a.paddle.com/v2/click/16413/40105?link=1227',
-            content: 'A video course to help you become a VSCode rock star! '
-          },
+        newsletterSettings: {
+          type: 'default',
+          title: '🤹 Subscribe & stay in the loop:',
+          placeholder: 'your email'
         }
       }
     }
