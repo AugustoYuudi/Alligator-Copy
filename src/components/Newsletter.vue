@@ -43,6 +43,9 @@
                 box-shadow 0 0 5px rgba(0, 0, 0, .1)
                 border-color rgba(0, 0, 0, .1)
                 outline 0
+                
+                &::placeholder
+                    opacity 0
 
         .form__send
             display block
@@ -74,7 +77,6 @@
     
     form
         .form__email
-            max-width 100%
 
         .form__send
             font-size 1.3rem

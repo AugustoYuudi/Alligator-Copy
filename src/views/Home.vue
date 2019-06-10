@@ -12,6 +12,7 @@
     <hr>
     <Posts :postsList="jsMainPosts"></Posts>
     <Footer></Footer>
+    <Sponsor :sponsorData=sponsorData></Sponsor>
   </div>
 </template>
 
@@ -23,7 +24,6 @@
   line-height 1.6
   list-style none
   text-decoration none
-
 br
   line-height 0
 
@@ -86,12 +86,14 @@ br
   import Posts from '@/components/Posts'
   import Newsletter from '@/components/Newsletter'
   import Footer from '@/components/Footer'
+  import Sponsor from '@/components/Sponsor'
   export default {
     components: {
       Navbar,
       Posts,
       Newsletter,
-      Footer
+      Footer,
+      Sponsor
     },
 
     data() {
@@ -187,6 +189,15 @@ br
           type: 'default',
           title: '🤹 Subscribe & stay in the loop:',
           placeholder: 'your email'
+        },
+
+        sponsorData: {
+          name: 'Slack',
+          logo: 'https://pentagram-production.imgix.net/618d5092-a542-4dae-bd27-a3afb4bcc12d/mb_slack_01.jpg?rect=0%2C74%2C3000%2C1872&w=880&fit=crop&fm=jpg&q=70&auto=format&h=548',
+          slogan: 'Slack',
+          text: 'Bring your team together with Slack, the collaboration hub for work.',
+          link_text: 'Learn More'
+
         }
       }
     }

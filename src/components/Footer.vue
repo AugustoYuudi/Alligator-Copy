@@ -2,6 +2,7 @@
     <div class="footer">
         <Advertisement :adList=ads></Advertisement>
         <Newsletter :settings=newsletterSettings></Newsletter>
+        <SubFooter></SubFooter>
     </div>
 </template>
 
@@ -12,10 +13,12 @@
 <script>
 import Advertisement from './Advertisement'
 import Newsletter from './Newsletter'
+import SubFooter from './SubFooter'
 export default {
     components: {
         Advertisement,
-        Newsletter
+        Newsletter,
+        SubFooter
     },
 
     data() {
