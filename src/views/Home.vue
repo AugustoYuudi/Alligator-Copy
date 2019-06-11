@@ -3,8 +3,8 @@
     <Navbar></Navbar>
     <section class="home__main">
       <img src="../assets/img/logo-fancy.svg" alt="Main Logo" class="main__logo">
-      <h1>Front-End Web Development,<br>Chewed Up</h1>
-      <p>Angular 2+, Vue.js, React, Svelte<br>JavaScript, CSS...</p>
+      <h1 class="main__title">Front-End Web Development,<br>Chewed Up</h1>
+      <p class="main__subtitle">Angular 2+, Vue.js, React, Svelte<br>JavaScript, CSS...</p>
     </section>
     <Posts :postsList="mainPosts"></Posts>
     <Newsletter :settings=newsletterSettings></Newsletter>
@@ -24,6 +24,9 @@
   line-height 1.6
   list-style none
   text-decoration none
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+
+
 br
   line-height 0
 
@@ -68,16 +71,19 @@ br
       line-height 1.7rem
 
 @media screen and (min-width: 641px)
-  .home__main
-    .main__logo
-      width 180px
-      height 180px
-    
-    h1
-      font-size 3.4em
-    
-    p
-      font-size 1.2em
+  .home
+    .home__main
+      .main__logo
+        width 180px
+        height 180px
+      
+      .main__title
+        font-weight 200
+        line-height 1
+        font-size 3.7em
+      
+      .main__subtitle
+        font-size 1.2em
 </style>
 
 
@@ -192,11 +198,11 @@ br
         },
 
         sponsorData: {
-          name: 'Slack',
-          logo: 'https://pentagram-production.imgix.net/618d5092-a542-4dae-bd27-a3afb4bcc12d/mb_slack_01.jpg?rect=0%2C74%2C3000%2C1872&w=880&fit=crop&fm=jpg&q=70&auto=format&h=548',
-          slogan: 'Slack',
-          text: 'Bring your team together with Slack, the collaboration hub for work.',
-          link_text: 'Learn More'
+          name: 'Monday',
+          logo: 'https://cdn4.buysellads.net/uu/1/42500/1546366658-1538019426-Monday-logo-250-100.png',
+          slogan: 'A new way to manage your work',
+          text: "The revolutionary project management tool is here and it's visual. Start Your Free Trial Now",
+          link_text: 'Start free trial'
 
         }
       }
