@@ -17,19 +17,6 @@
 </template>
 
 <style lang="stylus">
-*
-  margin 0
-  padding 0
-  font-weight 300
-  line-height 1.6
-  list-style none
-  text-decoration none
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
-
-
-br
-  line-height 0
-
 .home
   hr
     width 15%

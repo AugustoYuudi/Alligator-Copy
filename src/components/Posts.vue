@@ -73,6 +73,7 @@
     
     .posts__more
         border none
+        background none
         margin-top 1rem
         margin-bottom 2rem
         transition transform .15s ease
