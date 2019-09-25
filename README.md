@@ -35,6 +35,11 @@ Compilar e levantar server com hot-reload
 npm run serve
 ```
 
+O projeto irá ser executado em 
+```
+localhost:8080
+```
+
 ## Ideias a ser implementadas
 
 * Server backend
