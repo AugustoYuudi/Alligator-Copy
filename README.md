@@ -9,34 +9,34 @@ O intuito do projeto era o aprendizado de Vue.js juntamente com o frontend bási
 
 ## Stack
 
-    * Vue.js com CLI
-    * Stylus
-    * Rupture.css
+* Vue.js com CLI
+* Stylus
+* Rupture.css
 
 ## Problemas existentes
 
-    * Atualmente só foi implementado a home (nao 100%)
-    * Codigo imaturo, faltou componetização
-    * Uso do BEM CSS nao foi implementado corretamente
-    * Pouca exploração do stylus (poderia ter mixins, cores e variaveis globais)
-    * Mal uso de fontes
+* Atualmente só foi implementado a home (nao 100%)
+* Codigo imaturo, faltou componetização
+* Uso do BEM CSS nao foi implementado corretamente
+* Pouca exploração do stylus (poderia ter mixins, cores e variaveis globais)
+* Mal uso de fontes
 
 ## Navegando no projeto
 
 Instalando dependencias
 
-    ```
-    npm install 
-    ```
+```
+npm install 
+```
 
 Compilar e levantar server com hot-reload
 
-    ```
-    npm run serve
-    ```
+```
+npm run serve
+```
 
 ## Ideias a ser implementadas
 
-    * Server backend
-    * Animações
-    * SEO / Otimizações em geral 
+* Server backend
+* Animações
+* SEO / Otimizações em geral 
